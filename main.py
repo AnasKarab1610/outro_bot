@@ -21,7 +21,7 @@ async def outro(ctx):
 
     # انتظار انتهاء الصوت
     while vc.is_playing():
-        await asyncio.sleep(1)
+      await asyncio.sleep(0.1) # صار أسرع بـ 10 مرات
 
     # طرد الجميع (Disconnect)
     for member in channel.members:
