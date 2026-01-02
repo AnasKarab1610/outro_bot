@@ -22,6 +22,12 @@ async def on_message(message):
     if message.content.lower() != "out":
         return
 
+    # 🗑️ حذف رسالة out فورًا
+    try:
+        await message.delete()
+    except:
+        pass
+
     # لازم يكون الكاتب داخل روم صوتي
     if not message.author.voice:
         await message.channel.send("❌ ادخل روم صوتي أولاً.")
@@ -33,7 +39,7 @@ async def on_message(message):
     # تشغيل الصوت
     vc.play(discord.FFmpegPCMAudio("outro.mp3"))
 
-    # ⏱️ انتظر 15 ثانية (والصوت شغال)
+    # ⏱️ انتظر 15 ثانية
     await asyncio.sleep(15)
 
     # طرد الجميع من الروم
