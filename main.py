@@ -54,7 +54,7 @@ class OutroView(discord.ui.View):
     @discord.ui.button(label="الى هنا تنتهي سهرتنا", style=discord.ButtonStyle.primary, custom_id="outro_btn_2")
     async def button2_callback(self, interaction: discord.Interaction, button: discord.ui.Button):
         # الرقم 12 هو عدد الثواني
-        await play_and_kick(interaction, "outro2.mp3", 12)
+        await play_and_kick(interaction, "outro2.mp3", 9)
 
 @bot.event
 async def on_ready():
